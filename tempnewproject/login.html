@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 300px;
+      position: relative;
+    }
+
+    .popup h2 {
+      margin-bottom: 1rem;
+      color: #1e3a3a;
+    }
+
+    .popup input {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .popup button {
+      width: 100%;
+      background: #1e3a3a;
+      color: white;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .popup .close {
+      position: absolute;
+      top: 10px; right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay" id="login-overlay" style="display: none;">
+    <div class="popup">
+      <span class="close" onclick="document.getElementById('login-overlay').style.display='none'">&times;</span>
+      <h2>Login</h2>
+      <form action="login.php" method="POST">
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div class="switch-link">
+        Don't have an account? <a href="#" onclick="switchToRegister()">Register</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="overlay" id="register-overlay" style="display: none;">
+    <div class="popup">
+      <span class="close" onclick="document.getElementById('register-overlay').style.display='none'">&times;</span>
+      <h2>Register</h2>
+      <form action="register.php" method="POST">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+      <div class="switch-link">
+        Already have an account? <a href="#" onclick="switchToLogin()">Login</a>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    document.getElementById("loginBtn").addEventListener("click", function (e) {
+      e.preventDefault(); 
+      document.getElementById("login-overlay").style.display = "flex";
+    });
+  
+    function switchToRegister() {
+      document.getElementById('login-overlay').style.display = 'none';
+      document.getElementById('register-overlay').style.display = 'flex';
+    }
+  
+    function switchToLogin() {
+      document.getElementById('register-overlay').style.display = 'none';
+      document.getElementById('login-overlay').style.display = 'flex';
+    }
+  </script>
+
+</body>
+</html>

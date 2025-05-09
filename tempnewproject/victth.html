@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #deb88761;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            gap: 45px;
+            padding: 50px;
+        }
+        .property-details {
+            flex: 2;
+            background: #fbfbfb;
+            padding: 20px;
+            border-radius: 39px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact-owner {
+            flex: 1;
+            background:#fbfbfb;
+            padding: 20px;
+            border-radius: 39px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .emi {
+            color: gray;
+            font-size: 14px;
+        }
+        .property-images img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .contact-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+        .contact, .phone {
+            background: #59bbffd4;
+            color: #4e4e4e;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 36px;
+            font-size: 16px;
+        }
+        .property-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+        }
+        .property-info p {
+            margin: 5px 0;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        .popup h3 {
+            margin-bottom: 10px;
+        }
+        .popup input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .popup .close-btn {
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="property-details">
+            <h2>₹55.0 Lac <span class="emi">EMI - ₹19k</span></h2>
+            <p>2 BHK villaFor Sale in vasco city, <a href="#">GOA</a></p>
+            <div class="property-images">
+                <img src="nightowl.jpg" alt="Property Image">
+            </div>
+            <div class="property-info">
+                <p><strong>Carpet Area:</strong> 800 sqft</p>
+                <p><strong>Floor:</strong> 2 (Out of 2 Floors)</p>
+                <p><strong>Transaction Type:</strong> historic house</p>
+                <p><strong>Status:</strong> Ready to Move</p>
+                <p><strong>Facing:</strong> North</p>
+                <p><strong>Furnished Status:</strong> Semi-Furnished</p>
+                <p><strong>Car Parking:</strong> 1 Covered, 1 Open</p>
+            </div>
+            <div class="contact-buttons">
+                <button class="contact" onclick="openPopup()">Contact Owner</button>
+                <button class="phone" onclick="openPopup()">Get Phone No.</button>
+            </div>
+        </div>
+        <div class="contact-owner">
+            <h3>Contact Owner</h3>
+            <p><strong>queen of panjim</strong> +91-98XXXXXXXX</p>
+            <button class="phone" onclick="openPopup()">Get Phone No.</button>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup">
+        <h3>Enter Your Details</h3>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <input type="tel" id="phone" placeholder="Your Phone Number">
+        <button onclick="submitForm()">Submit</button>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+    
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            
+            if(name && email && phone) {
+                alert("Thank you, " + name + "! Your details have been submitted.");
+                closePopup();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>royal oaks</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">ROYAL OAKS</a>
+        <button id="menu" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle menu">
+            <span class="navbar-menu-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="btn btn-link" id="loginBtn">Login</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-link" id="trendingBtn">Trending Properties</button>
+                </li>
+                <li class="nav-item">
+                    <a href="#about us" class="btn btn-link" id="aboutro">about us</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="carousel slide" id="propertyCarousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="cor1.jpg" class="d-block w-100 h-536" alt="Property 1">
+            </div>
+            <div class="carousel-item">
+                <img src="intnew2.jpg" class="d-block w-100 h-51" alt="Property 2">
+            </div>
+            <div class="carousel-item">
+                <img src="int22.jpg" class="d-block w-100 h-51" alt="Property 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#propertyCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#propertyCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="trending-properties" id="trendingProperties">
+        <h2>Trending Properties</h2>
+        <div class="card-deck">
+            <div class="card">
+                <img src="LA-mansion.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">white house</h5>
+                    <p class="card-text">Beachfront Villa with Private Pool:
+                        "Escape to paradise in this luxurious beachfront villa boasting stunning ocean views, a private
+                        infinity pool, lush tropical gardens, and direct access to the pristine sandy beach. Perfect for
+                        families or groups seeking a tranquil coastal retreat.".</p>
+                        <a href="whiteH.html"></a><button id="urban-loft-btn">Know More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="mtnhouse.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Urban Loft</h5>
+                    <p class="card-text">Urban Loft in the Heart of Downtown:
+                        "Experience modern living in this chic, open-concept loft located in the vibrant heart of the
+                        city. Featuring exposed brick, high ceilings, large windows, and a gourmet kitchen, this stylish
+                        space is ideal for urban professionals seeking a dynamic lifestyle.".</p>
+                        <a href="mtnhouse.html"><button id="urban-loft-btn">Know More</button></a>
+
+                </div>
+            </div>
+            <div class="card">
+                <img src="vchouse.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Mountain Cabin</h5>
+                    <p class="card-text">Rustic Mountain Cabin:
+                        "Nestled amidst the serene mountain landscape, this cozy cabin offers a perfect blend of rustic
+                        charm and modern amenities. Relax by the crackling fireplace, enjoy panoramic views from the
+                        wraparound deck, and explore nearby hiking trails for a rejuvenating escape.".</p>
+                        <a href="vchouse.html"><button id="urban-loft-btn">know more</button></a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="nightowl.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Victorian Townhouse</h5>
+                    <p class="card-text">Historic Victorian Townhouse:
+                        "Step back in time with this beautifully restored Victorian townhouse, showcasing intricate
+                        woodwork, ornate fireplaces, historic district, this home offers a unique blend of character and contemporary conveniences.".
+                    </p>
+                    <a href="victth.html"><button id="urban-loft-btn">know more</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="background-color: #f8f9fa; padding: 20px; text-align: center;" id="about us">
+        <div>
+            <h3>About Us</h3>
+            <p>We are a leading property management company dedicated to providing excellent service and quality
+                properties to our clients.</p>
+        </div>
+        <div>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div style="margin-top: 20px;">
+            <p>&copy; 2025 Royal Oaks. All Rights Reserved.</p>
+        </div>
+        <div class="overlay" id="login-overlay">
+            <div class="auth-popup">
+              <span class="close-btn" onclick="closePopup()">✖</span>
+              <h2>Login</h2>
+              <form action="login.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <button type="submit">Login</button>
+              </form>
+              <div class="switch-link" onclick="switchToRegister()">Don't have an account? Register</div>
+            </div>
+          </div>
+          
+          <div class="overlay" id="register-overlay" style="display: none;">
+            <div class="popup">
+              <span class="close" onclick="document.getElementById('register-overlay').style.display='none'">&times;</span>
+              <h2>Register</h2>
+              <form action="register.php" method="POST">
+                <input type="text" name="first_name" placeholder="First Name" required />
+                <input type="text" name="last_name" placeholder="Last Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <button type="submit">Register</button>
+              </form>
+              <div class="switch-link">
+                Already have an account? <a href="#" onclick="switchToLogin()">Login</a>
+              </div>
+            </div>
+          </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+
+</html>
